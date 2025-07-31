@@ -1,66 +1,265 @@
-/* Estilos generales */
 body {
-  font-family: 'Roboto Mono', monospace;
-  margin: 20px;
-  background-color: #efc1f3;
-  color: #333;
+  font-family: "Roboto Mono", monospace; /* Fuente monoespaciada para todo el texto */
+  margin: 20px; /* Espacio externo alrededor del body */
+  background-color: #e3b7e9; /* Color de fondo rosado claro */
+  color: #333; /* Color del texto: gris oscuro */
 }
 
-/* Header */
-#superior {
-  background: linear-gradient(90deg, #2a7b9b, #57c785, #eddd53);
-  color: rgb(27, 26, 26);
-  padding: 30px;
-  border-radius: 20px;
-  text-align: left;
-  box-shadow: 20px 20px 10px;
-  font-size: 2rem;
-  
+/* Estilos para el encabezado principal */
+.header {
+  background: linear-gradient(
+    90deg,
+    #2a7b9b,
+    #57c785,
+    #eddd53
+  ); /* Degradado horizontal de colores */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 10px; /* Espacio interno alrededor del contenido */
+  box-shadow: 20px 20px 10px; /* Sombra grande para dar profundidad */
+  font-size: 2rem; /* Tamaño de fuente grande para el encabezado */
+  max-height: 400px;
+  overflow: hidden; /* oculta lo que se pasa del alto */
 }
 
+.header::after {
+  content: "↓ Bienvenido a mi pagina web ↓";
+  display: block;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #222;
+  margin-top: 15px;
+  font-family: "Unkempt", cursive;
+}
 
+/* Contenedor dentro del header para organizar contenido */
+.header-contenido {
+  display: flex; /* Usar flexbox para organizar hijos */
+  align-items: center; /* Alinear verticalmente al centro */
+  gap: 20px; /* Separación horizontal entre elementos */
+  flex-wrap: wrap; /* Permitir que los elementos bajen a la siguiente línea si no entran */
+}
+
+.texto-header {
+  width: 100%; /* Ocupar todo el ancho para que pueda alinear su contenido */
+  position: relative; /* Por si más adelante querés posicionar algo */
+}
+
+.texto-header h1 {
+  text-align: center;
+  width: 100%;
+}
+
+#fijo {
+  position: fixed;
+  margin-left: 610px;
+  background-color: rgb(191, 191, 223);
+}
+
+span {
+  margin: 400px;
+}
+
+span::after {
+  content: "esto es un after ";
+  color: #ff6600;
+  background-color: #1900ff;
+  padding: 2px 4px;
+  border-radius: 59px;
+}
+span::before {
+  content: "esto es un before";
+  color: #ff6600;
+  background-color: #1900ff;
+  border-radius: 59px;
+}
+
+img {
+  height: 220px;
+  width: 220px;
+  border-radius: 310px;
+  position: relative;
+  left: 5px;
+  bottom: 10em;
+}
+
+.descripcion {
+  font-size: 2rem; /* Tamaño de texto grande */
+  margin-top: 16px; /* Espacio arriba */
+  margin-left: auto; /* Empuja el párrafo hacia la derecha */
+  text-align: center; /* Alinea el texto dentro del bloque a la derecha */
+}
+
+/* Estilos para los íconos en el header */
+.iconos i {
+  margin-right: 10px; /* Separación a la derecha de cada ícono */
+  font-size: 2.5rem; /* Tamaño un poco más grande para los íconos */
+}
+.iconos {
+  position: relative;
+  left: 22px;
+  top: 40px;
+}
+
+/* Contenedor flexible para las cajas (texto1 y texto2) */
 .contenedor-cajas {
-  display: flex;
-  gap: 20px;
-  margin-top: 30px;
-  flex-wrap: wrap; /* Para que se acomode bien en pantallas chicas */
+  display: flex; /* Organiza las cajas en fila con flexbox */
+  gap: 4%; /* Espacio entre las cajas */
+  margin-top: 30px; /* Espacio arriba para separar de otros elementos */
+  flex-wrap: wrap; /* Permite que las cajas bajen a la siguiente línea si no entran */
 }
 
-/* Estilos para cada cajita */
-.texto1{
-  background-color: #b3ffe6;
+/* Estilos para las cajas de contenido */
+.texto1,
+.texto2 {
+  background-color: oklch(91.401% 0.05954 168.042); /* Fondo verde claro */
+  border: 2px solid #333; /* Borde gris oscuro */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 25px; /* Espacio interno para separar texto del borde */
+  width: 100%; /* Ocupa todo el ancho posible dentro del máximo */
+  max-width: 300px; /* Ancho máximo fijo para que no crezca demasiado */
+  min-height: 250px; /* Altura mínima para que tengan tamaño uniforme */
+  box-shadow: 10px 0 10px; /* Sombra suave a la derecha */
+  box-sizing: border-box; /* Incluye padding y borde dentro del ancho */
+  font-family: "Unkempt", cursive; /* Fuente cursiva decorativa */
+}
+.texto1:hover {
+  background-color: aqua;
+}
+
+.texto2:hover {
+  background-color: darkorange;
+}
+
+.texto3 {
+  background-color: oklch(91.401% 0.05954 168.042); /* Fondo rosado claro */
   border: 2px solid #333;
   border-radius: 15px;
-  padding: 15px;
+  padding: 25px;
   width: 100%;
-  max-width: 280px;
+  max-width: 300px;
   min-height: 250px;
-  box-sizing: border-box;
-  font-size: 1rem;
   box-shadow: 10px 0 10px;
+  box-sizing: border-box;
   font-family: "Unkempt", cursive;
+}
+
+.texto3:hover {
+  background-color: azure;
+}
+
+.texto4 {
+  background-color: oklch(91.401% 0.05954 168.042);
+  border: 2px solid #333;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 300px;
+  min-width: 250px;
+  box-shadow: 10px 0 10px;
+  box-sizing: border-box;
+  font-family: "Unkempt", cursive;
+}
+
+.texto4:hover {
+  background-color: #57c785;
+}
+
+.texto5 {
+  background-color: oklch(91.401% 0.05954 168.042);
+  border: 2px solid #333;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 300px;
+  min-width: 250px;
+  box-shadow: 10px 0 10px;
+  box-sizing: border-box;
+}
+.texto5:hover {
+  background-color: gray;
+}
+
+.display{
+ background-color: blue;
+display:flex;
+justify-content: center;
+
+}
+.item1{
+	background-color: #ccc;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	font-size: 30px;
+}
+
+
+.display2{
+  background-color: antiquewhite;
+  display: inline-flex;
+  flex-direction: row-reverse;
   
 }
-
-.texto2{
-  background-color: #bdf0db;
-  border: 2px solid black;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 10px 0 10px;
- border-radius: 46px 46px 46px 46px;
-  font-family: "Libertinus Mono", monospace;
-
+.item2{
+  background-color: #af82e2;
+  width: 100px;
+	height: 100px;
+	margin: 10px;
+	font-size: 30px;
 
 }
 
-/* Sección de texto largo */
+.display3{
+  background-color: #57c785;
+  flex-direction: column;
+  display: inline-flex;
+
+ 
+}
+
+
+.item3{
+  background-color: aqua;
+  width: 100px;
+	height: 100px;
+	margin: 10px;
+	font-size: 30px;
+}
+
+
+/* Estilos para el bloque de texto largo en columnas */
 .lorem {
-  column-count: 5;
-  column-gap: 60px;
-
+  background-color: #e3b7e9;
+  column-count: 5; /* Divide el texto en 5 columnas */
+  column-gap: 60px; /* Espacio entre columnas */
+  margin-top: 1rem; /* Separación arriba para separar de otros elementos */
 }
 
-.lorem p{
-  margin: 0;
+/* Párrafo dentro del bloque .lorem sin margen */
+.lorem p {
+  margin: 0; /* Sin margen para que encaje bien en columnas */
 }
+
+/* === Estilos responsivos para pantallas pequeñas === */
+@media screen and (max-width: 768px) {
+  .header {
+    font-size: 1.5rem; /* Reduce tamaño de fuente del encabezado */
+    text-align: center; /* Centra el texto del header */
+  }
+
+  .header-contenido {
+    flex-direction: column; /* Organiza el contenido en columna */
+    align-items: center; /* Centra los elementos */
+    text-align: center; /* Centra texto dentro */
+  }
+
+  .contenedor-cajas {
+    flex-direction: column; /* Las cajas apiladas en columna */
+    align-items: center; /* Centradas horizontalmente */
+
+  }
+
+  .lorem {
+    column-count: 1; /* Una columna para texto en pantallas pequeñas */
+    column-gap: 20px; /* Menor espacio entre columnas (aunque solo hay 1) */
+    font-size: 1rem; /* Tamaño normal de fuente */
+
+  }}
